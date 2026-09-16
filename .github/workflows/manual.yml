@@ -1,0 +1,16 @@
+name: Stepper Manual Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: false
+        default: staging
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo input
+        run: echo "Dispatched for ${{ inputs.environment }}"
